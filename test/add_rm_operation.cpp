@@ -16,9 +16,9 @@ class AddRmOperation : public testing::Test
   {
 	json_logic_ = JsonLogic::GetInstance();
 
-	json_logic_->AddOperation("myOperation", [this](const json& values, const json& data) {
-	  const double a = json_logic_->Apply(values.at(0), data);
-	  const double b = json_logic_->Apply(values.at(1), data);
+	json_logic_->AddOperation("myOperation", [this,x=json_logic_](const json& values, const json& data) {
+	  const double a = x->Apply(values.at(0), data); 
+	  const double b = x->Apply(values.at(1), data);
 
 	  return a + b;
 	});
