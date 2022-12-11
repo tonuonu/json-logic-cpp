@@ -108,5 +108,6 @@ install(FILES src/json_logic.h src/jsonlogic/exception.h
     COMPONENT Devel
 )
 
+include(asan.cmake)
 include(cpack.cmake)
 include(CPack)
